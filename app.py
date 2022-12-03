@@ -24,6 +24,7 @@ def add():
   new_task = Todo(name=name, complete=False)
   db.session.add(new_task)
   db.session.commit()
+  return redirect(url_for('home'))
 
 if __name__ == "__main__":
   with app.app_context():
