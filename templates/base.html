@@ -22,14 +22,15 @@
         <tr>
           <td>{{todo.id}}</td>
           <td>{{todo.name}}</td>
-          {%if todo.complete=False%}
+          {%if todo.complete==False%}
           <td>Not Completed</td>
-          {%else}
+          {%else%}
           <td>Completed</td>
           {%endif%}
           <td><a href="/update/{{todo.id}}">Update</a></td>
           <td><a href="/delete/{{todo.id}}">Delete</a></td>
         </tr>
+        {%endfor%}
       </tbody>
     </table>
   </body>
