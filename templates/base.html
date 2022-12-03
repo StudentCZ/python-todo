@@ -17,7 +17,17 @@
       </div>
     </form>
     <table>
-      <tbody></tbody>
+      <tbody>
+        {%for todo in todo_list%}
+        <tr>
+          <td>{{todo.id}}</td>
+          <td>{{todo.name}}</td>
+          {%if todo.complete=False%}
+          <td>Not Completed</td>
+          {%else}
+          <td>Completed</td>
+        </tr>
+      </tbody>
     </table>
   </body>
 </html>
