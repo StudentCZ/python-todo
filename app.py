@@ -29,7 +29,7 @@ def add():
 @app.route('/update/<int:id>')
 def update(id):
   todo=Todo.query.get(id)
-  todo.done=not todo.complete
+  todo.complete=not todo.complete
   db.session.commit()
   return redirect(url_for('home'))
 
