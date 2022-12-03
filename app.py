@@ -26,6 +26,13 @@ def add():
   db.session.commit()
   return redirect(url_for('home'))
 
+@app.route('/update/<int:id>')
+def update(id):
+  todo=Todo.query.get(id)
+  todo.done=not todo.complete
+  db.session.commit()
+  return redirect(url_for('home'))
+
 if __name__ == "__main__":
   with app.app_context():
     db.create_all()
