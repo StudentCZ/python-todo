@@ -41,11 +41,5 @@ def delete(id):
   return redirect(url_for('home'))
 
 if __name__ == "__main__":
-  with app.app_context():
-    db.create_all()
-
-    new_todo = Todo(title='hey', complete=False)
-    db.session.add(new_todo)
-    db.session.commit()
 
   app.run(debug=True)
