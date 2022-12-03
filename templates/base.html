@@ -26,6 +26,8 @@
           <td>Not Completed</td>
           {%else}
           <td>Completed</td>
+          {%endif%}
+          <td><a href="/update/{{todo.id}}">Update</a></td>
         </tr>
       </tbody>
     </table>
