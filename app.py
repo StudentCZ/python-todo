@@ -18,6 +18,13 @@ def home():
     todo_list = Todo.query.all()
     return render_template('base.html', todo_list=todo_list)
 
+@app.route('/add', methods=['POST'])
+def add():
+  name = request.form.get('name')
+  new_task = Todo(name=name, complete=False)
+  db.session.add(new_task)
+  db.session.commit()
+
 if __name__ == "__main__":
   with app.app_context():
     db.create_all()
